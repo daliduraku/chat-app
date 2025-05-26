@@ -4,3 +4,11 @@ export function generateMessage(text) {
         createdAt: new Date().getTime()
     }
 }
+
+
+export function generateLocationMessage(location) {
+    return {
+        url: location,
+        createdAt: new Date().getTime()
+    }
+}
