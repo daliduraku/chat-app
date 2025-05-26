@@ -4,6 +4,7 @@ import http from 'http';
 import { Server } from 'socket.io';
 import { fileURLToPath } from 'url';
 import { Filter } from 'bad-words'
+import { generateMessage } from './utils/messages.js';
 
 
 const app = express();
@@ -23,7 +24,7 @@ let count = 0;
 io.on('connection', (socket) => {
     console.log('New WebSocket connection')
 
-    socket.emit('message', 'Welcome!')
+    socket.emit('message', generateMessage('Welcome!'));
     socket.broadcast.emit('message', 'A new user has joined!')
 
     socket.on('sendMessage', (message, callback) => {
