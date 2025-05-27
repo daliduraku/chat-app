@@ -36,7 +36,7 @@ io.on('connection', (socket) => {
 
         socket.join(user.room)
 
-        socket.emit('message', generateMessage('Welcome!'));
+        socket.emit('message', generateMessage('Admin', 'Welcome!'));
         socket.broadcast.to(user.room).emit('message', generateMessage(`${user.username} has joined!`));
         callback()
 
@@ -52,7 +52,7 @@ io.on('connection', (socket) => {
             return callback('Profanity is not allowed!')
         }
 
-        io.to(user.room).emit('message', generateMessage(message));
+        io.to(user.room).emit('message', generateMessage(user.username, message));
         callback('Delivered!')
     })
     
