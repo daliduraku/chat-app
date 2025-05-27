@@ -42,12 +42,6 @@ export function removeUser(id) {
 }
 
 
-addUser({
-    id: 22,
-    username: 'Dali',
-    room: 'Brooklyn'
-})
-
 export function getUser(id) {
     return users.find( user => user.id === id);
 }
@@ -57,17 +51,3 @@ export function getUsersInRoom(room) {
     room = room.trim().toLowerCase();
     return users.filter(user => user.room === room);
 }
-
-
-addUser({
-    id: 12,
-    username: 'Marvi',
-    room: 'Brooklyn'
-})
-
-addUser({
-    id: 12,
-    username: 'Stivi',
-    room: 'New York City'
-})
-
