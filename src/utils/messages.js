@@ -6,9 +6,10 @@ export function generateMessage(text) {
 }
 
 
-export function generateLocationMessage(location) {
+export function generateLocationMessage(username, url) {
     return {
-        url: location,
+        username,
+        url,
         createdAt: new Date().getTime()
     }
 }
