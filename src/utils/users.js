@@ -48,6 +48,17 @@ addUser({
     room: 'Brooklyn'
 })
 
+export function getUser(id) {
+    return users.find( user => user.id === id);
+}
+
+
+export function getUsersInRoom(room) {
+    room = room.trim().toLowerCase();
+    return users.filter(user => user.room === room);
+}
+
+
 addUser({
     id: 12,
     username: 'Marvi',
@@ -59,9 +70,4 @@ addUser({
     username: 'Stivi',
     room: 'New York City'
 })
-
-
-export function getUser(id) {
-    return users.find( user => user.id === id);
-}
 
